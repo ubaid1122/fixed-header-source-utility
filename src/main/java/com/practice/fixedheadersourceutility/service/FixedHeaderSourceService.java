@@ -6,5 +6,7 @@ package com.practice.fixedheadersourceutility.service;
  */
 public interface FixedHeaderSourceService {
 
-    void fixedHeaderSourceInCategory(String categoryId);
+    void fixedHeaderSourceByIndustryId(String industryId);
+
+    void fixedHeaderSourceByCategoryId(String categoryId);
 }

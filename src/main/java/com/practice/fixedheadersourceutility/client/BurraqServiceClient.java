@@ -39,4 +39,11 @@ public interface BurraqServiceClient {
                                                 @PathVariable(value = "headerId") String headerId,
                                                 @RequestBody CategoryHeaderRequest request);
 
+    @GetMapping("/categories")
+    Object findAllCategoriesByIndustryId(
+            @RequestParam(value = "industryId") final String industryId,
+            @RequestParam("projection") final String projection,
+            @RequestParam(value = "page") final Integer page,
+            @RequestParam(value = "size") final Integer size);
+
 }

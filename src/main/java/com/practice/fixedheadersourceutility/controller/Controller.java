@@ -23,9 +23,16 @@ public class Controller {
     }
 
 
-    @RequestMapping("/api/fixed-headers/{categoryId}")
-    public ResponseEntity<String> fixedHeaderInCategory(@PathVariable String categoryId) {
-        fixedHeaderSourceService.fixedHeaderSourceInCategory(categoryId);
+    @RequestMapping("/api/fixed-headers/industry/{industryId}")
+    public ResponseEntity<String> fixedHeaderSourceByIndustry(@PathVariable String industryId) {
+        fixedHeaderSourceService.fixedHeaderSourceByIndustryId(industryId);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
+    @RequestMapping("/api/fixed-headers/category/{categoryId}")
+    public ResponseEntity<String> fixedHeaderSourceByCategory(@PathVariable String categoryId) {
+        fixedHeaderSourceService.fixedHeaderSourceByCategoryId(categoryId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
